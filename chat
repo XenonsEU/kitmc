@@ -24,6 +24,7 @@ on chat:
 		set {_lvl} to ""
 		set {_facchat} to ""
 		set {_prison} to ""
+		execute console command "/nte player %player% suffix &f"
 	if {sc.%player%} is not set:
 		if player has permission "player":
 			set {_prefix} to "Igrac"
