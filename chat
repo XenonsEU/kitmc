@@ -27,7 +27,7 @@ on chat:
 		execute console command "/nte player %player% suffix &f"
 	if {sc.%player%} is not set:
 		if player has permission "player":
-			set {_prefix} to "Igrac"
+			set {_prefix} to "&7Igrac"
 			set {_chat} to "&f"
 		if player has permission "voter":
 			set {_sub} to "&8[&eVote&8]"
