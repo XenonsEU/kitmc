@@ -57,11 +57,11 @@ on chat:
 			set {_chat} to "&f"
 		wait 1 tick
 		if "%name of the player%" is "robert712002":
-			broadcast "%{_f}%%{_prison}%&8[&cAdmin&8]%{_sub}%&8%player%&8[&6YT&8] &2» &a%colored message%"
+			broadcast "%{_facchat}%%{_prison}%&8[&cAdmin&8]%{_sub}%&8%player%&8[&6YT&8] &2» &a%colored message%"
 			execute console command "/nte player %player% prefix &8[%{_prefix}%&8]"
 			stop
 		else:
-			broadcast "%{_f}%%{_prison}%&8[%{_prefix}%&8]%{_sub}%&8%player% &2» %{_chat}%%message%"
+			broadcast "%{_facchat}%%{_prison}%&8[%{_prefix}%&8]%{_sub}%&8%player% &2» %{_chat}%%message%"
 			execute console command "/nte player %player% prefix &8[%{_prefix}%&8]"
 			stop
 		stop
