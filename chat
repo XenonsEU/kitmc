@@ -20,6 +20,10 @@ on chat:
 		execute console command "/nte player %player% suffix %{_lvl}%"
 		set {_facchat} to ""
 		set {_prison} to ""
+	if {_name} = "KitMC":
+		set {_lvl} to ""
+		set {_facchat} to ""
+		set {_prison} to ""
 	if {sc.%player%} is not set:
 		if player has permission "player":
 			set {_prefix} to "Igrac"
