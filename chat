@@ -65,11 +65,11 @@ on chat:
 		#
 		if "%name of the player%" is "robert712002":
 			broadcast "%{_facchat}%%{_prison}%&8[&cAdmin&8]%{_sub}%&2%player%&8[&6YT&8]%{_lvl}% &2» &a%colored message%"
-			execute console command "/nte player %player% prefix &8[%{_prefix}%&8]"
+			execute console command "/nte player %player% prefix &8[%{_prefix}%&8]&2"
 			stop
 		else:
 			broadcast "%{_facchat}%%{_prison}%&8[%{_prefix}%&8]%{_sub}%&2%player%%{_lvl}% &2» %{_chat}%%message%"
-			execute console command "/nte player %player% prefix &8[%{_prefix}%&8]"
+			execute console command "/nte player %player% prefix &8[%{_prefix}%&8]&2"
 			stop
 		stop
 	else:
@@ -114,4 +114,4 @@ on join:
 		set {_prefix} to "&3Builder"
 	if player has permission "yt":
 		set {_prefix} to "&6YT"
-	execute console command "/nte player %player% prefix &8[%{_prefix}%&8]"
+	execute console command "/nte player %player% prefix &8[%{_prefix}%&8]&2"
