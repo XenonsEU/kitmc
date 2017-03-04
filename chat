@@ -3,6 +3,7 @@ on chat:
 	set {_name} to server's name
 	if {_name} = "Factions":
 		set {_prison} to ""
+		set {_lvl} to ""
 		set {_mplayer} to faction player from player
 		set {_test} to name of faction player {_mplayer}
 		set {_faction} to faction of faction player {_mplayer}
@@ -12,11 +13,12 @@ on chat:
 	if {_name} = "Prison":
 		set {_prison} to "&8[&c%{prison.rank.%player%}%&8]"
 		execute console command "/nte player %player% suffix %{_prison}%"
-		set {_f} to ""
+		set {_facchat} to ""
+		set {_lvl} to ""
 	if {_name} = "Hub":
 		set {_lvl} to "&8[&a%{level.%player%}%&8]"
 		execute console command "/nte player %player% suffix %{_lvl}%"
-		set {_f} to ""
+		set {_facchat} to ""
 		set {_prison} to ""
 	if {sc.%player%} is not set:
 		if player has permission "player":
@@ -56,11 +58,11 @@ on chat:
 			set {_chat} to "&f"
 		wait 1 tick
 		if "%name of the player%" is "robert712002":
-			broadcast "%{_facchat}%%{_prison}%&8[&cAdmin&8]%{_sub}%&8%player%&8[&6YT&8] &2» &a%colored message%"
+			broadcast "%{_facchat}%%{_prison}%&8[&cAdmin&8]%{_sub}%&8%player%&8[&6YT&8]%{_lvl}% &2» &a%colored message%"
 			execute console command "/nte player %player% prefix &8[%{_prefix}%&8]"
 			stop
 		else:
-			broadcast "%{_facchat}%%{_prison}%&8[%{_prefix}%&8]%{_sub}%&8%player% &2» %{_chat}%%message%"
+			broadcast "%{_facchat}%%{_prison}%&8[%{_prefix}%&8]%{_sub}%&8%player%%{_lvl}% &2» %{_chat}%%message%"
 			execute console command "/nte player %player% prefix &8[%{_prefix}%&8]"
 			stop
 		stop
