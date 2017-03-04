@@ -7,7 +7,8 @@ on chat:
 		set {_test} to name of faction player {_mplayer}
 		set {_faction} to faction of faction player {_mplayer}
 		set {_f} to name of faction {_faction}
-		execute console command "/nte player %player% suffix %{_f}%"
+		set {_facchat} to "&8[&a%{_f}%&8]"
+		execute console command "/nte player %player% suffix %{_facchat}%"
 	if {_name} = "Prison":
 		set {_prison} to "&8[&c%{prison.rank.%player%}%&8]"
 		execute console command "/nte player %player% suffix %{_prison}%"
