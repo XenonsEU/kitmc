@@ -76,6 +76,17 @@ on chat:
 		loop all players:
 			if loop-player has permission "sc":
 				send "&4&l&kA &7[&6KitMC&7] &b%player%&7» &e%message%" to loop-player
+				
+command /sc:
+	permission: sc
+	trigger:
+		if {sc.%player%} is not set:
+			set {sc.%player%} to true
+			message "&7Sada ste u staff chatu!"
+			stop
+		if {sc.%player%} is true:
+			clear {sc.%player%}
+			message "&7Vise niste u staff chatu!"
 	
 on join:
 	if player has permission "player":
