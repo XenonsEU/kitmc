@@ -1,0 +1,93 @@
+on chat:
+	cancel event
+	set {_name} to server's name
+	if {_name} = "Factions":
+		set {_prison} to ""
+		set {_mplayer} to faction player from player
+		set {_test} to name of faction player {_mplayer}
+		set {_faction} to faction of faction player {_mplayer}
+		set {_f} to name of faction {_faction}
+	if {_name} = "Prison":
+		set {_prison} to "&8[&c%{prison.rank.%player%}%&8]"
+		set {_f} to ""
+	else:
+		set {_prison} to ""
+		set {_f} to ""
+	if {sc.%player%} is not set:
+		if player has permission "player":
+			set {_prefix} to "Igrac"
+			set {_chat} to "&f"
+		if player has permission "voter":
+			set {_sub} to "&8[&eVote&8]"
+		else:
+			set {_sub} to ""
+		if player has permission "vip":
+			set {_prefix} to "&aVip"
+			set {_chat} to "&e"
+		if player has permission "vipp":
+			set {_prefix} to "&aVip&6+&a"
+			set {_chat} to "&e"
+		if player has permission "eternal":
+			set {_prefix} to "&6Lion"
+			set {_chat} to "&e"
+		#
+		if player has permission "helper":
+			set {_prefix} to "&9Helper"
+			set {_chat} to "&a"
+		if player has permission "mod":
+			set {_prefix} to "&2Mod"
+			set {_chat} to "&a"
+		if player has permission "admin":
+			set {_prefix} to "&cAdmin"
+			set {_chat} to "&a"
+		if player has permission "owner":
+			set {_prefix} to "&4Owner"
+			set {_chat} to "&a"
+		if player has permission "builder":
+			set {_prefix} to "&3Builder"
+			set {_chat} to "&a"
+		if player has permission "yt":
+			set {_prefix} to "&6YT"
+			set {_chat} to "&f"
+		wait 1 tick
+		if "%name of the player%" is "robert712002":
+			broadcast "%{_f}%%{_prison}%&8[&cAdmin&8]%{_sub}%&8%player%&8[&6YT&8]&8[&a%{level.%player%}%&8] &2» &a%colored message%"
+			execute console command "/nte player %player% prefix &8[%{_prefix}%&8]"
+			execute console command "/nte player %player% suffix &8[&a%{level.%player%}%&8]"
+			stop
+		else:
+			broadcast "%{_f}%%{_prison}%&8[%{_prefix}%&8]%{_sub}%&8%player%&8[&a%{level.%player%}%&8] &2» %{_chat}%%message%"
+			execute console command "/nte player %player% prefix &8[%{_prefix}%&8]"
+			execute console command "/nte player %player% suffix &8[&a%{level.%player%}%&8]"
+			stop
+		stop
+	else:
+		cancel event
+		loop all players:
+			if loop-player has permission "sc":
+				send "&4&l&kA &7[&6KitMC&7] &b%player%&7» &e%message%" to loop-player
+	
+on join:
+	if player has permission "player":
+		set {_prefix} to "Igrac"
+	if player has permission "vip":
+		set {_prefix} to "&aVip"
+	if player has permission "vipp":
+		set {_prefix} to "&aVip&6+&a"
+	if player has permission "eternal":
+		set {_prefix} to "&6Lion"
+	#
+	if player has permission "helper":
+		set {_prefix} to "&9Helper"
+	if player has permission "mod":
+		set {_prefix} to "&2Mod"
+	if player has permission "admin":
+		set {_prefix} to "&cAdmin"
+	if player has permission "owner":
+		set {_prefix} to "&4Owner"
+	if player has permission "builder":
+		set {_prefix} to "&3Builder"
+	if player has permission "yt":
+		set {_prefix} to "&6YT"
+	execute console command "/nte player %player% prefix &8[%{_prefix}%&8]"
+	execute console command "/nte player %player% suffix &8[&a%{level.%player%}%&8]"
