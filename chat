@@ -87,6 +87,9 @@ command /sc:
 		if {sc.%player%} is true:
 			clear {sc.%player%}
 			message "&7Vise niste u staff chatu!"
+		if {sc.%player%} is false:
+			set {sc.%player%} to true
+			message "&7Sada ste u staff chatu!"
 	
 on join:
 	if player has permission "player":
