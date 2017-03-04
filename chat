@@ -100,4 +100,3 @@ on join:
 	if player has permission "yt":
 		set {_prefix} to "&6YT"
 	execute console command "/nte player %player% prefix &8[%{_prefix}%&8]"
-	execute console command "/nte player %player% suffix &8[&a%{level.%player%}%&8]"
