@@ -16,6 +16,8 @@ on chat:
 	if {_name} = "Hub":
 		set {_lvl} to "&8[&a%{level.%player%}%&8]"
 		execute console command "/nte player %player% suffix %{_lvl}%"
+		set {_f} to ""
+		set {_prison} to ""
 	if {sc.%player%} is not set:
 		if player has permission "player":
 			set {_prefix} to "Igrac"
