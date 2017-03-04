@@ -62,6 +62,7 @@ on chat:
 			set {_prefix} to "&6YT"
 			set {_chat} to "&f"
 		wait 1 tick
+		#
 		if "%name of the player%" is "robert712002":
 			broadcast "%{_facchat}%%{_prison}%&8[&cAdmin&8]%{_sub}%&2%player%&8[&6YT&8]%{_lvl}% &2» &a%colored message%"
 			execute console command "/nte player %player% prefix &8[%{_prefix}%&8]"
