@@ -93,6 +93,7 @@ command /sc:
 			message "&7Sada ste u staff chatu!"
 	
 on join:
+	wait 2 seconds
 	set {_p} to online players
 	set tab header to "     &fKitMC Network||&8&m-----------------------||    &fOnline: &a%{_p}%" and footer to "&fwww.kitmc.net - fb.kitmc.net||&8&m-----------------------||&f1.8 - 1.11.2" for player
 	if player has permission "player":
