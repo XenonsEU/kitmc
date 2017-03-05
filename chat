@@ -2,14 +2,14 @@ every 50 seconds:
 	loop all players:
 		add loop-player to {_p}
 	wait 3 ticks
-	set tab header to "     &fKitMC Network\n&8&m-----------------------\n    &fOnline: &a%{_p}%" and footer to "&fwww.kitmc.net - fb.kitmc.net\n&8&m-----------------------\n&f1.8 - 1.11.2" for loop-player
-
+	set tab header to "&f\n     &fKitMC Network\n&8&m--------------------\n    &fOnline: &a%{_p}%" and footer to "&f\n&fwww.kitmc.net - fb.kitmc.net\n&8&m-----------------------\n&f1.8 - 1.11.2" for loop-player
 on chat:
 	cancel event
 	loop all players:
 		add loop-player to {_p}
 	wait 3 ticks
-	set tab header to "     &fKitMC Network\n&8&m-----------------------\n    &fOnline: &a%{_p}%" and footer to "&fwww.kitmc.net - fb.kitmc.net\n&8&m-----------------------\n&f1.8 - 1.11.2" for player
+	set tab header to "&f\n     &fKitMC Network\n&8&m--------------------\n    &fOnline: &a%{_p}%" and footer to "&f\n&fwww.kitmc.net - fb.kitmc.net\n&8&m-----------------------\n&f1.8 - 1.11.2" for player
+	
 	set {_name} to server's name
 	if {_name} = "Factions":
 		set {_prison} to ""
@@ -83,7 +83,6 @@ on chat:
 			stop
 		stop
 	else:
-		cancel event
 		loop all players:
 			if loop-player has permission "sc":
 				send "&4&l&kA &7[&6KitMC&7] &b%player%&7» &e%message%" to loop-player
@@ -103,11 +102,10 @@ command /sc:
 			message "&7Sada ste u staff chatu!"
 	
 on join:
-	wait 2 seconds
 	loop all players:
 		add loop-player to {_p}
 	wait 3 ticks
-	set tab header to "     &fKitMC Network\n&8&m-----------------------\n    &fOnline: &a%{_p}%" and footer to "&fwww.kitmc.net - fb.kitmc.net\n&8&m-----------------------\n&f1.8 - 1.11.2" for player
+	set tab header to "&f\n     &fKitMC Network\n&8&m--------------------\n    &fOnline: &a%{_p}%" and footer to "&f\n&fwww.kitmc.net - fb.kitmc.net\n&8&m-----------------------\n&f1.8 - 1.11.2" for player
 	if player has permission "player":
 		set {_prefix} to "&7Igrac"
 	if player has permission "vip":
