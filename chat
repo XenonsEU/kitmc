@@ -5,7 +5,7 @@ every 50 seconds:
 on chat:
 	cancel event
 	set {_name} to server's name
-	set tab header to "&f\n    &fKitMC Network\n&8&m-----------------------&r\n    &Server: &a%{_name}%\n&f" and footer to "&f\n&fwww.kitmc.net - fb.kitmc.net\n&8&m-----------------------&r\n&f1.8 - 1.11.2" for player
+	set tab header to "&f\n    &fKitMC Network\n&8&m-----------------------&r\n    &fServer: &a%{_name}%\n&f" and footer to "&f\n&fwww.kitmc.net - fb.kitmc.net\n&8&m-----------------------&r\n&f1.8 - 1.11.2" for player
 	if {_name} = "Factions":
 		set {_prison} to ""
 		set {_lvl} to ""
