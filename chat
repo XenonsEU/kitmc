@@ -1,5 +1,7 @@
 on chat:
 	cancel event
+	set {_p} to online players
+	set tab header to "     &fKitMC Network||&8&m-----------------------||    &fOnline: &a%{_p}%" and footer to "&fwww.kitmc.net - fb.kitmc.net||&8&m-----------------------||&f1.8 - 1.11.2" for player
 	set {_name} to server's name
 	if {_name} = "Factions":
 		set {_prison} to ""
