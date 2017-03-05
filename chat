@@ -1,11 +1,11 @@
 every 50 seconds:
 	set {_name} to server's name
 	loop all players:
-		set tab header to "&f\n    &fKitMC Network\n&8&m-----------------------&r\n    &fServer: &a%{_name}%\n&f" and footer to "&f\n&fwww.kitmc.net - fb.kitmc.net\n&8&m-----------------------&r\n&f1.8 - 1.11.2" for loop-player
+		set tab header to "&f\n   &fKitMC Network\n&8&m-----------------------&r\n   &fServer: &a%{_name}%\n&f" and footer to "&f\n&fwww.kitmc.net - fb.kitmc.net\n&8&m-----------------------&r\n&f1.8 - 1.11.2" for loop-player
 on chat:
 	cancel event
 	set {_name} to server's name
-	set tab header to "&f\n    &fKitMC Network\n&8&m-----------------------&r\n    &fServer: &a%{_name}%\n&f" and footer to "&f\n&fwww.kitmc.net - fb.kitmc.net\n&8&m-----------------------&r\n&f1.8 - 1.11.2" for player
+	set tab header to "&f\n   &fKitMC Network\n&8&m-----------------------&r\n   &fServer: &a%{_name}%\n&f" and footer to "&f\n&fwww.kitmc.net - fb.kitmc.net\n&8&m-----------------------&r\n&f1.8 - 1.11.2" for player
 	if {_name} = "Factions":
 		set {_prison} to ""
 		set {_lvl} to ""
@@ -98,7 +98,7 @@ command /sc:
 	
 on join:
 	set {_name} to server's name
-	set tab header to "&f\n    &fKitMC Network\n&8&m-----------------------&r\n    &fServer: &a%{_name}%\n&f" and footer to "&f\n&fwww.kitmc.net - fb.kitmc.net\n&8&m-----------------------&r\n&f1.8 - 1.11.2" for player
+	set tab header to "&f\n   &fKitMC Network\n&8&m-----------------------&r\n   &fServer: &a%{_name}%\n&f" and footer to "&f\n&fwww.kitmc.net - fb.kitmc.net\n&8&m-----------------------&r\n&f1.8 - 1.11.2" for player
 	if player has permission "player":
 		set {_prefix} to "&7Igrac"
 	if player has permission "vip":
