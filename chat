@@ -1,6 +1,8 @@
 on chat:
 	cancel event
-	set {_p} to online players
+	loop all players:
+		add loop-player to {_p}
+	wait 3 ticks
 	set tab header to "     &fKitMC Network\n&8&m-----------------------\n    &fOnline: &a%{_p}%" and footer to "&fwww.kitmc.net - fb.kitmc.net\n&8&m-----------------------\n&f1.8 - 1.11.2" for player
 	set {_name} to server's name
 	if {_name} = "Factions":
@@ -96,7 +98,9 @@ command /sc:
 	
 on join:
 	wait 2 seconds
-	set {_p} to online players
+	loop all players:
+		add loop-player to {_p}
+	wait 3 ticks
 	set tab header to "     &fKitMC Network\n&8&m-----------------------\n    &fOnline: &a%{_p}%" and footer to "&fwww.kitmc.net - fb.kitmc.net\n&8&m-----------------------\n&f1.8 - 1.11.2" for player
 	if player has permission "player":
 		set {_prefix} to "&7Igrac"
