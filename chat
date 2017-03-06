@@ -101,6 +101,11 @@ command /sc:
 		if {sc.%player%} is false:
 			set {sc.%player%} to true
 			message "&7Sada ste u staff chatu!"
+			
+command /make [<player>] [<text>]:
+	permission: admin
+	trigger:
+		make arg 1 say arg 2
 	
 on join:
 	set {_name} to server's name
