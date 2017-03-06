@@ -64,7 +64,7 @@ on chat:
 			set {_prefix} to "&3Builder"
 			set {_chat} to "&a"
 		if player has permission "yt":
-			set {_prefix} to "&6YouTube"
+			set {_prefix} to "&6YT"
 			set {_chat} to "&f"
 		wait 1 tick
 		#
