@@ -42,7 +42,7 @@ on chat:
 			set {_prefix} to "&aVip"
 			set {_chat} to "&e"
 		if player has permission "vipp":
-			set {_prefix} to "&aVip&6+&a"
+			set {_prefix} to "&aVip&6+"
 			set {_chat} to "&e"
 		if player has permission "eternal":
 			set {_prefix} to "&6Lion"
