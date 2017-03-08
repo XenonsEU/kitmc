@@ -1,3 +1,38 @@
+on command "/pl":
+	if player does not have permission "admin":
+		cancel event
+		message "&7&m-------------------"
+		message "&a» &cNOP hah <3"
+		message "&7&m-------------------"
+		
+on command "/plugin":
+	if player does not have permission "admin":
+		cancel event
+		message "&7&m-------------------"
+		message "&a» &cNOP hah <3"
+		message "&7&m-------------------"
+		
+on command "/plugins":
+	if player does not have permission "admin":
+		cancel event
+		message "&7&m-------------------"
+		message "&a» &cNOP hah <3"
+		message "&7&m-------------------"
+		
+on command "/?":
+	if player does not have permission "admin":
+		cancel event
+		message "&7&m-------------------"
+		message "&a» &cNOP hah <3"
+		message "&7&m-------------------"
+		
+on command "/help":
+	if player does not have permission "admin":
+		cancel event
+		message "&7&m-------------------"
+		message "&a» &cNOP hah <3"
+		message "&7&m-------------------"
+
 on chat:
 	cancel event
 	set {_name} to server's name
