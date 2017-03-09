@@ -39,7 +39,7 @@ on any movement:
 	else:
 		if difference between now and {time.%player%} is higher than 1 hour:
 			set {time.%player%} to now
-			evaluate "execute console command ""/givexp %player% 15""" on bungeecord server "lobby"
+			evaluate "execute console command ""/givexp %player% 15""" on bungeecord server "Hub"
 			send "&7Dobili ste &615&7 XP-a u hubu!"
 			
 on quit:
