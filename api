@@ -1,0 +1,60 @@
+#-------------------
+#KitMC
+#-------------------
+
+options:
+	logo: &3&lKitMC&7»
+ #-------------------
+# Signs
+#-------------------
+command /setsign [<text>] [<text>]:
+	permission: admin
+	trigger:
+		if arg 1 is set:
+			if arg 2 is set:
+				set line arg 1 of targeted block to "%arg 2%"
+				stop
+			else:
+				message "{@logo} &7/setsign 1 test"
+				stop
+		else:
+			message "{@logo} &7/setsign 1 test"
+			stop
+		
+command /setshop:
+	permission: admin
+	trigger:
+		set line 1 of targeted block to "&7[&bShop&7]"
+		stop
+			
+on right click on a wall sign:
+	if line 1 of clicked block is "&7[&aBesplatno&7]":
+		set {_l} to line 2 of clicked block parsed as item
+		wait 1 tick
+		give {_l} to player
+		stop
+	if line 1 of clicked block is "&7[&bShop&7]":
+		set {_l} to line 2 of clicked block parsed as item
+		set {_l2} to line 3 of clicked block parsed as number
+		wait 1 tick
+		if {bal.%player%} >= {_l2}:
+			give {_l} to player
+			remove {_l2} from {bal.%player%}
+			send "{@logo} &7Kupili ste: &a%{_l}%"
+			stop
+		else:
+			send "{@logo} &cNemate dovoljno para!"
+			stop
+#-------------------
+# Skull
+#-------------------
+
+command /skull [<text>]:
+	aliases: /head, /skulls, /heads
+	permission: admin
+	trigger:
+		if arg 1 is set:
+			set {_p} to "%arg 1%" parsed as offline player
+			give {_p}'s skull to player
+		else:
+			message "{@logo} &7/skull <imeigraca>"
