@@ -33,14 +33,16 @@ on command "/help":
 		message "&a» &cNOP hah <3"
 		message "&7&m-------------------"
 		
-on any movement:
-	if {time.%player%} is not set:
-		set {time.%player%} to now
-	else:
-		if difference between now and {time.%player%} is higher than 1 hour:
-			set {time.%player%} to now
-			evaluate "execute console command ""/givexp %player% 15""" on bungeecord server "Hub"
-			send "&7Dobili ste &615&7 XP-a u hubu!"
+every 10 minutes:
+	execute console command "/apiload"
+	wait 2 seconds
+	execute console command "/sk reload api"
+	
+command /apiload:
+	permission: admin
+	trigger:
+		download from "https://raw.githubusercontent.com/XenonsMC/kitmc/master/api" to "plugins/Skript/scripts/api.sk"
+		stop
 			
 on quit:
 	clear {time.%player%}
