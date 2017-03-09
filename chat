@@ -32,6 +32,15 @@ on command "/help":
 		message "&7&m-------------------"
 		message "&a» &cNOP hah <3"
 		message "&7&m-------------------"
+		
+on any movement:
+	if {time.%player%} is not set:
+		set {time.%player%} to now
+	else:
+		if difference between now and {time.%player%} is higher than 1 hour:
+			set {time.%player%} to now
+			evaluate "execute console command ""/givexp %player% 15""" on bungeecord server "lobby"
+			send "&7Dobili ste &615&7 XP-a u hubu!"
 
 on chat:
 	cancel event
