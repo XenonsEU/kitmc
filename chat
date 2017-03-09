@@ -41,6 +41,9 @@ on any movement:
 			set {time.%player%} to now
 			evaluate "execute console command ""/givexp %player% 15""" on bungeecord server "lobby"
 			send "&7Dobili ste &615&7 XP-a u hubu!"
+			
+on quit:
+	clear {time.%player%}
 
 on chat:
 	cancel event
