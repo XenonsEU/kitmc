@@ -104,6 +104,28 @@ command /pay [<text>] [<offline player>]:
 			message "&7&m------------------------"
 			message "{@logo} &c/pay cena imeigraca"
 			message "&7&m------------------------"
+			
+command /eco [<text>][<offline player>] [<text>]:
+	permission: admin
+	aliases: /economy
+	trigger:
+		if arg 1 is "give":
+			if arg 2 is set:
+				if arg 3 is set:
+					add %arg 3% to {bal.%arg 2%}
+					message "{@logo} &7Dali ste pare: &e%arg 2%"
+					send "{@logo} &aDobili ste: &6%arg 3%$$" to arg 2
+					stop
+				else:
+					message "&7&m------------------------"
+					message "{@logo} &c/eco give <igrac> <pare>"
+					message "&7&m------------------------"
+					stop
+			else:
+				message "&7&m------------------------"
+				message "{@logo} &c/eco give <igrac> <pare>"
+				message "&7&m------------------------"
+				stop
 #-------------------
 # Shop
 #-------------------
