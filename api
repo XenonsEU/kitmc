@@ -12,7 +12,7 @@ command /setsign [<text>] [<text>]:
 	trigger:
 		if arg 1 is set:
 			if arg 2 is set:
-				set line arg 1 of targeted block to "%arg 2%"
+				set line %arg 1% of targeted block to "%arg 2%"
 				stop
 			else:
 				message "{@logo} &7/setsign 1 test"
