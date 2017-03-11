@@ -3,6 +3,9 @@
 #-------------------
 options:
 	logo: &3&lKitMC&7»
+	
+variables:
+	{bal.%player%} = 0
  #-------------------
 # Signs
 #-------------------
@@ -57,3 +60,70 @@ command /skull [<text>]:
 			give {_p}'s skull to player
 		else:
 			message "{@logo} &7/skull <imeigraca>"
+#-------------------
+# Economy
+#-------------------
+command /kitmc [<text>] [<text>] [<offline player>]:
+	aliases: /bal, /balance, /money, /pare, /economy
+	trigger:
+		if arg 1 is not set:
+			message "&7&m------------------------"
+			message "&a» &7Image: &6%{bal.%player%}%&a$$"
+			message "&7&m------------------------"
+			stop
+command /pay [<text>] [<offline player>]:
+	trigger:
+		if arg 1 is set:
+			if arg 2 is set:
+				if {bal.%player%} >= arg 1:
+					remove arg 1 from {bal.%player%}
+					add arg 1 to {bal.%arg 2%}
+					message "&7&m------------------------"
+					message "&a» &7Platili ste &6%arg 1%$"
+					message "&a» &7Igracu: &a%arg 2%"
+					message "&7&m------------------------"
+					wait 1 tick
+					send "&7&m------------------------" to arg 2
+					send "&a» &7Dobili ste &6%arg 1%$" to arg 2
+					send "&a» &7Od igraca: &a%player%" to arg 2
+					send "&7&m------------------------" to arg 2
+				else:
+					message "&7&m------------------------"
+					message "{@logo} &cNemate dovoljno para!"
+					message "&7&m------------------------"
+			else:
+				message "&7&m------------------------"
+				message "{@logo} &c/pay cena imeigraca"
+				message "&7&m------------------------"
+		else:
+			message "&7&m------------------------"
+			message "{@logo} &c/pay cena imeigraca"
+			message "&7&m------------------------"
+#-------------------
+# Shop
+#-------------------
+on right click on a wall sign:
+	if line 1 of clicked block is "&7[&bShop&7]":
+		set {_l2} to line 2 of clicked block parsed as item
+		set {_l3} to line 3 of clicked block parsed as number
+		if line 4 of clicked block is "&4KUPI":
+			if {bal.%player%} >= {_l3}:
+				remove {_l3} from {bal.%player%}
+				give 1 {_l2} to player
+				stop
+			else:
+				message "&7&m------------------------"
+				message "{@logo} &cNemate dovoljno para za ovo!"
+				message "&a» &7/bal da vidite pare!"
+				message "&7&m------------------------"
+		if line 4 of clicked block is "&4PRODAJ":
+			if player is holding {_l2}:
+				remove 1 {_l2} from player's inventory
+				add {_l3} to {bal.%player%}
+				message "&a+%{_l3}%$$"
+				stop
+			else:
+				message "&7&m------------------------"
+				message "{@logo} &cMorate drzati item"
+				message "&cda bi ga prodali!"
+				message "&7&m------------------------"
