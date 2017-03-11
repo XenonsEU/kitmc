@@ -43,7 +43,18 @@ command /apiload:
 	trigger:
 		download from "https://raw.githubusercontent.com/XenonsMC/kitmc/master/api" to "plugins/Skript/scripts/api.sk"
 		stop
-			
+		
+on join:
+	set {_name} to server's name
+	if {_name} = "KitMC":
+		set join message to "&a» &7%player%"
+		stop
+on join:
+	set {_name} to server's name
+	if {_name} = "KitMC":
+		set join message to "&c» &7%player%"
+		stop
+	
 on quit:
 	clear {time.%player%}
 
