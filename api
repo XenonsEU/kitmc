@@ -1,7 +1,6 @@
 #-------------------
 #KitMC
 #-------------------
-
 options:
 	logo: &3&lKitMC&7»
  #-------------------
@@ -48,7 +47,6 @@ on right click on a wall sign:
 #-------------------
 # Skull
 #-------------------
-
 command /skull [<text>]:
 	aliases: /head, /skulls, /heads
 	permission: admin
