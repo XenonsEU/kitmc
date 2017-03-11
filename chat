@@ -115,7 +115,7 @@ on chat:
 		if "%name of the player%" is "robert712002" or "DinoZockt":
 			broadcast "%{_facchat}%%{_prison}%&8[&cAdmin&8]&7%player%%{_sub}%&8[&6YT&8]%{_lvl}% &2» &a%colored message%"
 			stop
-		if "%name of the player%" is "brandon033001" or "Switchbladed" or "rexs123" or "Shockbyte":
+		if "%name of the player%" is "brandon033001" or "Switchbladed" or "rexs123" or "Shockbyte" or "AndyVonDe":
 			broadcast "%{_facchat}%%{_prison}%&8[&3Host&8]&7%player%%{_sub}%%{_lvl}% &2» &3%colored message%"
 			stop
 		if "%name of the player%" is "Zolja" or "Mo0oVeR_":
@@ -176,9 +176,12 @@ on join:
 		set {_prefix} to "&3Builder"
 	if player has permission "yt":
 		set {_prefix} to "&6YT"
-	if "%name of the player%" is "brandon033001" or "Switchbladed" or "rexs123" or "Shockbyte":
+	if "%name of the player%" is "brandon033001" or "Switchbladed" or "rexs123" or "Shockbyte" or "AndyVonDe":
 		execute console command "/nte player %player% prefix &8[&3Host&8]&7"
+		stop
 	if player's name is "Zolja" or "Mo0oVeR_":
 		execute console command "/nte player %player% prefix &8[&6Famous&8]&7"
+		stop
 	else:
 		execute console command "/nte player %player% prefix &8[%{_prefix}%&8]&7"
+		stop
