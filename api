@@ -61,6 +61,11 @@ command /skull [<text>]:
 		else:
 			message "{@logo} &7/skull <imeigraca>"
 #-------------------
+# Weather
+#-------------------
+on weather change:
+	set weather to sunny
+#-------------------
 # Economy
 #-------------------
 command /kitmc [<text>] [<text>] [<offline player>]:
