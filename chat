@@ -1,3 +1,19 @@
+command /spec:
+	aliases: /spectator, /sp
+	permission: helper
+	trigger:
+		execute console command "/gamemode spectator %player%"
+		message "&3&lKitMC&7» Sada ste u SPECTATOR modu!"
+		stop
+		
+command /surv:
+	aliases: /survival, /su
+	permission: helper
+	trigger:
+		execute console command "/gamemode survival %player%"
+		message "&3&lKitMC&7» Sada ste u SURVIVAL modu!"
+		stop
+
 on command "/pl":
 	if player does not have permission "admin":
 		cancel event
