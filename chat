@@ -101,8 +101,7 @@ on chat:
 		set {_facchat} to ""
 		set {_lvl} to ""
 	if {_name} = "Hub":
-		set {_lvl} to "&8[&a%{level.%player%}%&8]"
-		execute console command "/nte player %player% suffix %{_lvl}%"
+		execute console command "/nte player %player% suffix &7"
 		set {_facchat} to ""
 		set {_prison} to ""
 	if {_name} = "KitMC":
@@ -149,19 +148,19 @@ on chat:
 		wait 1 tick
 		#
 		if "%name of the player%" is "robert712002" or "DinoZockt":
-			broadcast "%{_facchat}%%{_prison}%&8[&cAdmin&8]&7%player%%{_sub}%&8[&6YT&8]%{_lvl}% &2» &a%colored message%"
+			broadcast "%{_facchat}%%{_prison}%&8[&cAdmin&8]&7%player%%{_sub}%&8[&6YT&8] &2» &a%colored message%"
 			stop
 		if "%name of the player%" is "brandon033001" or "Switchbladed" or "rexs123" or "Shockbyte" or "AndyVonDe":
-			broadcast "%{_facchat}%%{_prison}%&8[&3Host&8]&7%player%%{_sub}%%{_lvl}% &2» &3%colored message%"
+			broadcast "%{_facchat}%%{_prison}%&8[&3Host&8]&7%player%%{_sub}% &2» &3%colored message%"
 			stop
 		if "%name of the player%" is "Zolja" or "Mo0oVeR_":
-			broadcast "%{_facchat}%%{_prison}%&8[&6Famous&8]&7%player%%{_sub}%%{_lvl}% &2» &6%colored message%"
+			broadcast "%{_facchat}%%{_prison}%&8[&6Famous&8]&7%player%%{_sub}% &2» &6%colored message%"
 			stop
 		else:
 			if player's name is "Xenons":
-				broadcast "%{_facchat}%%{_prison}%&8[%{_prefix}%&8]&7%player%%{_sub}%%{_lvl}% &2» %{_chat}%%colored message%"
+				broadcast "%{_facchat}%%{_prison}%&8[%{_prefix}%&8]&7%player%%{_sub}% &2» %{_chat}%%colored message%"
 			else:
-				broadcast "%{_facchat}%%{_prison}%&8[%{_prefix}%&8]&7%player%%{_sub}%%{_lvl}% &2» %{_chat}%%message%"
+				broadcast "%{_facchat}%%{_prison}%&8[%{_prefix}%&8]&7%player%%{_sub}% &2» %{_chat}%%message%"
 			stop
 		stop
 	else:
