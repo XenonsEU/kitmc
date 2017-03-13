@@ -152,3 +152,10 @@ on right click on a wall sign:
 				message "{@logo} &cMorate drzati item"
 				message "&cda bi ga prodali!"
 				message "&7&m------------------------"
+#-------------------
+# Free
+#-------------------
+on right click on a wall sign:
+	if line 1 of clicked block is "&7[&aBesplatno&7]":
+		set {_l2} to line 2 of clicked block parsed as item
+		give {_l2} to player
