@@ -74,7 +74,7 @@ on join:
 	if {_name} = "KitMC":
 		set join message to "&a» &7%player%"
 		stop
-on join:
+on quit:
 	set {_name} to server's name
 	if {_name} = "KitMC":
 		set join message to "&c» &7%player%"
