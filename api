@@ -93,9 +93,10 @@ command /eco [<text>][<offline player>] [<text>]:
 		if arg 1 is "give":
 			if arg 2 is set:
 				if arg 3 is set:
-					add arg 3 to {bal.%arg 2%}
+					set {_pare} to "%arg 3%" parsed as number
+					add {_pare} to {bal.%arg 2%}
 					message "{@logo} &7Dali ste pare: &e%arg 2%"
-					send "{@logo} &aDobili ste: &6%arg 3%$$" to arg 2
+					send "{@logo} &aDobili ste: &6%{_pare}%$$" to arg 2
 					stop
 				else:
 					message "&7&m------------------------"
@@ -109,10 +110,11 @@ command /eco [<text>][<offline player>] [<text>]:
 				stop
 		if arg 1 is "set":
 			if arg 2 is set:
-				if arg 3 is set:
-					set {bal.%arg 2%} to arg 3
+				if arg 3 is set::
+					set {_pare} to "%arg 3%" parsed as number
+					set {bal.%arg 2%} to {_pare}
 					message "{@logo} &7Postavili ste pare igraca: &e%arg 2%"
-					send "{@logo} &aVase pare su promenjene: &6%arg 3%$$" to arg 2
+					send "{@logo} &aVase pare su promenjene: &6%{_pare}%$$" to arg 2
 					stop
 				else:
 					message "&7&m------------------------"
