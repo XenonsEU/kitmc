@@ -6,7 +6,32 @@ options:
 	
 variables:
 	{bal.%player%} = 0
- #-------------------
+	
+#-------------------
+# CPS
+#-------------------	
+command /cps:
+	trigger:
+		if {cps.%player%} is not set:
+			set {s.cps.%player%} to 0
+			set action bar of player to "&7(&cCPS %{s.cps.%player%}%/s&7)"
+			set {cps.%player%} to true
+		else:
+			set {s.cps.%player%} to 0
+			clear {cps.%player%}
+			
+on click:
+	if {cps.%player%} is true:
+		add 1 to {s.cps.%player%}
+		set action bar of player to "&7(&cCPS %{s.cps.%player%}%/s&7)"
+		stop
+		
+every second:
+	loop all players:
+		if {cps.%loop-player%} is true:
+			set {s.cps.%loop-player%} to 0
+			set action bar of player to "&7(&cCPS %{s.cps.%player%}%/s&7)"
+#-------------------
 # Signs
 #-------------------
 command /setsign [<text>] [<text>]:
