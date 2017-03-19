@@ -86,16 +86,17 @@ command /pay [<text>] [<offline player>]:
 	trigger:
 		if arg 1 is set:
 			if arg 2 is set:
-				if {bal.%player%} >= arg 1:
-					remove arg 1 from {bal.%player%}
-					add arg 1 to {bal.%arg 2%}
+				set {_m} to "%arg 1%" parsed as number
+				if {bal.%player%} >= {_m}:
+					remove {_m} from {bal.%player%}
+					add {_m} to {bal.%arg 2%}
 					message "&7&m------------------------"
-					message "&a» &7Platili ste &6%arg 1%$"
+					message "&a» &7Platili ste &6%{_m}%$"
 					message "&a» &7Igracu: &a%arg 2%"
 					message "&7&m------------------------"
 					wait 1 tick
 					send "&7&m------------------------" to arg 2
-					send "&a» &7Dobili ste &6%arg 1%$" to arg 2
+					send "&a» &7Dobili ste &6%{_m}%$" to arg 2
 					send "&a» &7Od igraca: &a%player%" to arg 2
 					send "&7&m------------------------" to arg 2
 				else:
