@@ -7,6 +7,11 @@ options:
 variables:
 	{bal.%player%} = 0
 	
+on chat:
+	if message contains "ez" or "bg" or "izi" or "e z":
+		cancel event
+		send "{@logo} &cOve poruke nisu dozvoljene!"
+		stop
 #-------------------
 # CPS
 #-------------------	
