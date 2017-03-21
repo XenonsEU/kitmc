@@ -137,7 +137,7 @@ on chat:
 			set {_prefix} to "&cAdmin"
 			set {_chat} to "&f"
 		if player has permission "owner":
-			set {_prefix} to "&bOwner"
+			set {_prefix} to "&4Owner"
 			set {_chat} to "&f"
 		if player has permission "builder":
 			set {_prefix} to "&3Builder"
@@ -209,7 +209,7 @@ on join:
 	if player has permission "admin":
 		set {_prefix} to "&cAdmin"
 	if player has permission "owner":
-		set {_prefix} to "&bOwner"
+		set {_prefix} to "&4Owner"
 	if player has permission "builder":
 		set {_prefix} to "&3Builder"
 	if player has permission "yt":
