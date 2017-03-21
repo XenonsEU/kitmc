@@ -129,7 +129,7 @@ on chat:
 		#
 		if player has permission "helper":
 			set {_prefix} to "&eHelper"
-			set {_chat} to "&f"
+			set {_chat} to "&a"
 		if player has permission "mod":
 			set {_prefix} to "&6Mod"
 			set {_chat} to "&f"
@@ -203,7 +203,7 @@ on join:
 		set {_prefix} to "&6Lion"
 	#
 	if player has permission "helper":
-		set {_prefix} to "&eHelper"
+		set {_prefix} to "&aHelper"
 	if player has permission "mod":
 		set {_prefix} to "&6Mod"
 	if player has permission "admin":
