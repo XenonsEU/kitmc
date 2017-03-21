@@ -128,8 +128,8 @@ on chat:
 			set {_chat} to "&e"
 		#
 		if player has permission "helper":
-			set {_prefix} to "&eHelper"
-			set {_chat} to "&a"
+			set {_prefix} to "&aHelper"
+			set {_chat} to "&f"
 		if player has permission "mod":
 			set {_prefix} to "&6Mod"
 			set {_chat} to "&f"
