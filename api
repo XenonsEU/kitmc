@@ -16,10 +16,7 @@ command /ss [<player>]:
 	trigger:
 		if arg 1 is set:
 			if {frozen.%arg 1%} is not set:
-				set {frozen.&arg 1&} to true
-				loop all blocks in radius 1 around arg 1:
-					if loop-block is air:
-						set loop-block to ice
+				set {frozen.%arg 1%} to true
 				apply slowness 100 to arg 1 for 999999 minutes
 				send "&7&m-----------------------" to arg 1
 				send "&f████&c█&f████" to arg 1
@@ -39,9 +36,11 @@ command /ss [<player>]:
 				message "&7Posaljite mu poruku pomocu &a/msg&7!"
 			else:
 				clear {frozen.%arg 1%}
+				remove slowness from arg 1
 				send "&7&m-----------------------" to arg 1
-				send "&aVISE NISTE ZALEDJENI! to arg 1
+				send "&aVISE NISTE ZALEDJENI!" to arg 1
 				send "&7&m-----------------------" to arg 1
+				message "{@logo} &aigrac vise nije zamrznut!"
 				stop
 				
 on jump:
