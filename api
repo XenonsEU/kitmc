@@ -6,6 +6,48 @@ options:
 	
 variables:
 	{bal.%player%} = 0
+	
+#-------------------
+# Freeze
+#-------------------
+command /ss [<player>]:
+	aliases: /sl, /screenshare
+	permission: helper, mod, admin
+	trigger:
+		if arg 1 is set:
+			if {frozen.%arg 1%} is not set:
+				set {frozen.&arg 1&} to true
+				loop all blocks in radius 1 around arg 1:
+					if loop-block is air:
+						set loop-block to ice
+				apply slowness 100 to arg 1 for 999999 minutes
+				send "&7&m-----------------------" to arg 1
+				send "&f████&c█&f████" to arg 1
+				send "&f███&c█&0█&c█&f███" to arg 1
+				send "&f██&c█&6█&0█&6█&c█&f██" to arg 1
+				send "&f██&c█&6█&0█&6█&c█&f██" to arg 1
+				send "&f██&c█&6█&0█&6█&c█&f██" to arg 1
+				send "&f█&c█&6█████&c█&f█" to arg 1
+				send "&c█&6███&0█&6███&c█" to arg 1
+				send "&c█████████" to arg 1
+				send " " to arg 1
+				send "&c&lSTAFF VAS JE ZALEDIO!" to arg 1
+				send "&c&lAKO IZADJETE DOBICETE BAN!" to arg 1
+				send "&7&m-----------------------" to arg 1
+				#
+				message "{@logo} &eIgrac je zamrznut!"
+				message "&7Posaljite mu poruku pomocu &a/msg&7!"
+			else:
+				clear {frozen.%arg 1%}
+				send "&7&m-----------------------" to arg 1
+				send "&aVISE NISTE ZALEDJENI! to arg 1
+				send "&7&m-----------------------" to arg 1
+				stop
+				
+on jump:
+	if {frozen.%player%} is true:
+		cancel event
+		
 #-------------------
 # CPS
 #-------------------	
