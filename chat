@@ -143,12 +143,12 @@ on chat:
 			set {_prefix} to "&3Builder"
 			set {_chat} to "&f"
 		if player has permission "yt":
-			set {_prefix} to "&2YT"
+			set {_prefix} to "&eYT"
 			set {_chat} to "&f"
 		wait 1 tick
 		#
 		if "%name of the player%" is "robert712002" or "DinoZockt":
-			broadcast "%{_facchat}%%{_prison}%&8[&cAdmin&8]&7%player%%{_sub}%&8[&6YT&8] &2» &f%colored message%"
+			broadcast "%{_facchat}%%{_prison}%&8[&cAdmin&8]&7%player%%{_sub}%&8[&eYT&8] &2» &f%colored message%"
 			stop
 		if "%name of the player%" is "DeJay6426":
 			broadcast "%{_facchat}%%{_prison}%&8[&3Dev&8]&7%player%%{_sub}%&8[&6YT&8] &2» &a%colored message%"
@@ -213,7 +213,7 @@ on join:
 	if player has permission "builder":
 		set {_prefix} to "&3Builder"
 	if player has permission "yt":
-		set {_prefix} to "&2YT"
+		set {_prefix} to "&eYT"
 	if "%name of the player%" is "brandon033001" or "Switchbladed" or "rexs123" or "Shockbyte" or "AndyVonDe" or "Elcro":
 		execute console command "/nte player %player% prefix &8[&3Host&8]&7"
 		stop
