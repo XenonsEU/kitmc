@@ -74,9 +74,21 @@ on join:
 	if {_name} = "KitMC":
 		set join message to "&a» &7%player%"
 		stop
+	if {_name} = "Factions":
+		set join message to "&a» &7%player%"
+		stop
+	if {_name} = "Prison":
+		set join message to "&a» &7%player%"
+		stop
 on quit:
 	set {_name} to server's name
 	if {_name} = "KitMC":
+		set join message to "&c» &7%player%"
+		stop
+	if {_name} = "Factions":
+		set join message to "&c» &7%player%"
+		stop
+	if {_name} = "Prison":
 		set join message to "&c» &7%player%"
 		stop
 	
