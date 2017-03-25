@@ -12,7 +12,7 @@ variables:
 #-------------------
 command /ss [<player>]:
 	aliases: /sl, /screenshare
-	permission: helper, mod, admin
+	permission: helper
 	trigger:
 		if arg 1 is set:
 			if {frozen.%arg 1%} is not set:
