@@ -1,5 +1,5 @@
 command /vote:
-	aliases: /v, /votes, /voting
+	aliases: /votes, /voting
 	trigger:
 		message "&7&m---------------"
 		message "&6» &7Glasajte na:"
